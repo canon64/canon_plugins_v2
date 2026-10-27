@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>MainGameVoiceFaceEventBridge</AssemblyName>
+    <RootNamespace>MainGameVoiceFaceEventBridge</RootNamespace>
+    <Nullable>disable</Nullable>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+    <BepInExDir Condition="'$(BepInExDir)'==''">$(KKSDir)\BepInEx</BepInExDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 自作の部屋以外で発火させないための共通門番 -->
+    <Compile Include="..\_shared\BlankRoomGate.cs" Link="BlankRoomGate.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="RegressionHarness\**\*.cs" />
+    <Compile Remove="RuntimeSmoke\**\*.cs" />
+    <None Remove="RuntimeSmoke\**\*" />
+    <None Update="ImpactCueAudio\**\*.wav;ImpactCueAudio\**\manifest.json;ImpactCueAudio\selection.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UniTask">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UniTask.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExDir)\core\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MainGameCameraControl" Private="false">
+      <HintPath Condition="Exists('$(BepInExDir)\\plugins\\MainGameCameraControl\\MainGameCameraControl.dll')">$(BepInExDir)\plugins\MainGameCameraControl\MainGameCameraControl.dll</HintPath>
+      <HintPath Condition="Exists('$(BepInExDir)\\plugins\\canon_plugins\\MainGameCameraControl\\MainGameCameraControl.dll')">$(BepInExDir)\plugins\canon_plugins\MainGameCameraControl\MainGameCameraControl.dll</HintPath>
+      <HintPath Condition="Exists('F:\\kks\\work\\plugins\\canon_plugins\\MainGameCameraControl\\bin\\Release\\net472\\MainGameCameraControl.dll')">F:\kks\work\plugins\canon_plugins\MainGameCameraControl\bin\Release\net472\MainGameCameraControl.dll</HintPath>
+    </Reference>
+    <Reference Include="MainGameCharacterMorphBridge" Private="false">
+      <HintPath Condition="Exists('$(BepInExDir)\\plugins\\canon_plugins\\MainGameCharacterMorphBridge\\MainGameCharacterMorphBridge.dll')">$(BepInExDir)\plugins\canon_plugins\MainGameCharacterMorphBridge\MainGameCharacterMorphBridge.dll</HintPath>
+      <HintPath Condition="Exists('F:\\kks\\work\\plugins\\canon_plugins\\MainGameCharacterMorphBridge\\bin\\Release\\net472\\MainGameCharacterMorphBridge.dll')">F:\kks\work\plugins\canon_plugins\MainGameCharacterMorphBridge\bin\Release\net472\MainGameCharacterMorphBridge.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup><Compile Include="..\Shared\IndependentActorFilter.cs" Link="IndependentActorFilter.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="..\_shared\PluginInputBindings.cs" Link="PluginInputBindings.cs" /></ItemGroup>
+  <ItemGroup>
+    <Reference Include="MainGameUiInputCapture" Private="false">
+      <HintPath>..\MainGameUiInputCapture\bin\Release\net472\MainGameUiInputCapture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

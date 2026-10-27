@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <KKSDir>F:\kks</KKSDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="RuntimeSmoke.cs;TestAdapters.cs;VoiceVolumeSmoke.cs;VoiceReverbSmoke.cs" />
+    <Compile Include="..\CommandParser.cs;..\ExternalVoiceFaceCommand.cs;..\PluginSettings.cs" />
+    <Compile Include="..\ConfigurationManagerAttributes.cs" />
+    <Compile Include="..\ExternalVoicePlayer.SpatialAudio.cs;..\VoiceMouthEmitter.cs;..\Audio\SpatialVoiceSettings.cs" />
+    <Compile Include="..\ExternalVoicePlayer.cs;..\ExternalVoicePlayer.ImpactCue.cs;..\WavFileLoader.cs;..\VolumeBoostFilter.cs;..\SampleFadeFilter.cs;..\PublicApi.cs" />
+    <Compile Include="..\Audio\AudioPlaybackContracts.cs;..\Audio\AudioSequenceState.cs;..\Audio\ImpactCueState.cs;..\Audio\ImpactCueSettings.cs;..\Audio\SampleGainEnvelope.cs" />
+    <Compile Include="..\..\MainGameVrHipIkVoiceImpactBoost\HipIkMotionDetector.cs;..\..\MainGameVrHipIkVoiceImpactBoost\VoiceImpactBoostService.cs;..\..\MainGameVrHipIkVoiceImpactBoost\PluginSettings.cs;..\..\MainGameVrHipIkVoiceImpactBoost\SettingsJsonDto.cs;..\..\MainGameVrHipIkVoiceImpactBoost\ConfigurationManagerAttributes.cs" />
+    <Compile Include="..\..\MainGameVoiceImpactBoost\VoiceImpactBoostService.cs;..\..\MainGameVoiceImpactBoost\PluginConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(KKSDir)\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

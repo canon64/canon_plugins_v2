@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CommandParser.cs" Link="Production\CommandParser.cs" />
+    <Compile Include="..\MotionIntensityTextMatcher.cs" Link="Production\MotionIntensityTextMatcher.cs" />
+    <Compile Include="..\ExternalVoiceFaceCommand.cs" Link="Production\ExternalVoiceFaceCommand.cs" />
+    <Compile Include="..\PluginSettings.cs" Link="Production\PluginSettings.cs" />
+    <Compile Include="..\Inbound\InboundCommandDecoder.cs" Link="Production\InboundCommandDecoder.cs" />
+    <Compile Include="..\Inbound\InboundCommandEnvelope.cs" Link="Production\InboundCommandEnvelope.cs" />
+    <Compile Include="..\Inbound\InboundCommandQueue.cs" Link="Production\InboundCommandQueue.cs" />
+    <Compile Include="..\Inbound\InboundJsonValidator.cs" Link="Production\InboundJsonValidator.cs" />
+    <Compile Include="..\Scheduling\StableActionScheduler.cs" Link="Production\StableActionScheduler.cs" />
+    <Compile Include="..\Scheduling\SequenceSessionCoordinator.cs" Link="Production\SequenceSessionCoordinator.cs" />
+    <Compile Include="..\External\SubtitleEventClient.cs" Link="Production\SubtitleEventClient.cs" />
+    <Compile Include="..\External\LocalSubtitleApiClient.cs" Link="Production\LocalSubtitleApiClient.cs" />
+    <Compile Include="..\..\MainGameSubtitleCore\SubtitleApi.cs" Link="Production\SubtitleApi.cs" />
+    <Compile Include="..\ResponseText\ResponseTextCommandQueue.cs" Link="Production\ResponseTextCommandQueue.cs" />
+    <Compile Include="..\Game\GameVoiceGuardState.cs" Link="Production\GameVoiceGuardState.cs" />
+    <Compile Include="..\Game\GameVoiceLoadLedger.cs" Link="Production\GameVoiceLoadLedger.cs" />
+    <Compile Include="..\ExternalPipeServer.cs" Link="Production\ExternalPipeServer.cs" />
+    <Compile Include="..\Infrastructure\PipeServerHost.cs" Link="Production\PipeServerHost.cs" />
+    <Compile Include="..\Audio\AudioPlaybackContracts.cs" Link="Production\AudioPlaybackContracts.cs" />
+    <Compile Include="..\Audio\AudioSequenceState.cs" Link="Production\AudioSequenceState.cs" />
+    <Compile Include="..\Audio\ImpactCueState.cs" Link="Production\ImpactCueState.cs" />
+    <Compile Include="..\Audio\SampleGainEnvelope.cs" Link="Production\SampleGainEnvelope.cs" />
+    <Compile Include="..\External\AstralMethodCache.cs" Link="Production\AstralMethodCache.cs" />
+    <Compile Include="..\External\NamedPoseTextResolver.cs" Link="Production\NamedPoseTextResolver.cs" />
+    <Compile Include="..\Diagnostics\ReceiveTimingRecorder.cs" Link="Production\ReceiveTimingRecorder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+</Project>

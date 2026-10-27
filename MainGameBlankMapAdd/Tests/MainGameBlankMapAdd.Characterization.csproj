@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>MainGameBlankMapAdd.Characterization</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\ImpactBoostRouting.cs" Link="Production\ImpactBoostRouting.cs" />
+    <Compile Include="..\PluginSettings.cs" Link="Production\PluginSettings.cs" />
+    <Compile Include="..\RoomLayoutProfileStore.cs" Link="Production\RoomLayoutProfileStore.cs" />
+    <Compile Include="..\Bootstrap\PluginPaths.cs" Link="Production\PluginPaths.cs" />
+    <Compile Include="..\Diagnostics\RotatingFileLogSink.cs" Link="Production\RotatingFileLogSink.cs" />
+    <Compile Include="..\Settings\SettingsChangePlanner.cs" Link="Production\SettingsChangePlanner.cs" />
+    <Compile Include="..\Application\MainThreadDispatcher.cs" Link="Production\MainThreadDispatcher.cs" />
+    <Compile Include="..\Http\HttpCommandParser.cs" Link="Production\HttpCommandParser.cs" />
+    <Compile Include="..\Media\VideoPathRules.cs" Link="Production\VideoPathRules.cs" />
+    <Compile Include="..\Media\Playlist\FolderPlaylist.cs" Link="Production\FolderPlaylist.cs" />
+    <Compile Include="..\Media\CollectionShuffle.cs" Link="Production\CollectionShuffle.cs" />
+    <Compile Include="..\Media\Images\SlideshowFileCatalog.cs" Link="Production\SlideshowFileCatalog.cs" />
+    <Compile Include="..\Media\Images\SlideshowDateFolder.cs" Link="Production\SlideshowDateFolder.cs" />
+    <Compile Include="..\Media\Images\SlideshowBackgroundJob.cs" Link="Production\SlideshowBackgroundJob.cs" />
+    <Compile Include="..\Media\Images\SlideshowIo.cs" Link="Production\SlideshowIo.cs" />
+    <Compile Include="..\Media\Images\SlideshowUvMesh.cs" Link="Production\SlideshowUvMesh.cs" />
+    <Compile Include="..\Media\WebCam\WebCamDeviceCatalog.cs" Link="Production\WebCamDeviceCatalog.cs" />
+    <Compile Include="..\Media\WebCam\WebCamPathRules.cs" Link="Production\WebCamPathRules.cs" />
+    <Compile Include="..\Overlay\OverlaySurfaceRules.cs" Link="Production\OverlaySurfaceRules.cs" />
+    <Compile Include="..\Profiles\RoomProfileSelector.cs" Link="Production\RoomProfileSelector.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\_shared\BlankRoomGate.cs" Link="BlankRoomGate.cs" />
+    <Compile Include="..\_shared\MotionTraceLog.cs" Link="MotionTraceLog.cs" />
+    <Reference Include="BepInEx"><HintPath>$(KKSDir)\BepInEx\core\BepInEx.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(KKSDir)\BepInEx\core\0Harmony.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\Assembly-CSharp.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.AnimationModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.AudioModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(KKSDir)\KoikatsuSunshine_Data\Managed\UnityEngine.UI.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="VRGIN_OpenXR"><HintPath>$(KKSDir)\BepInEx\plugins\KKS_VR\VRGIN_OpenXR.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="Unity.XR.OpenVR"><HintPath>$(KKSDir)\BepInEx\plugins\KKS_VR\Unity.XR.OpenVR.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="MainGameUnifiedUi"><HintPath>$(KKSDir)\BepInEx\plugins\canon_plugins\MainGameUnifiedUi\MainGameUnifiedUi.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="MainGameTransformGizmo"><HintPath>$(KKSDir)\BepInEx\plugins\canon_plugins\MainGameTransformGizmo\MainGameTransformGizmo.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="MainGameUiInputCapture" Private="false">
+      <HintPath>..\MainGameUiInputCapture\bin\Release\net472\MainGameUiInputCapture.dll</HintPath>
+    </Reference>
+    <Reference Include="MainGameVoiceFaceEventBridge"><HintPath>..\MainGameVoiceFaceEventBridge\bin\Release\net472\MainGameVoiceFaceEventBridge.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+  <ItemGroup><Compile Include="..\_shared\PluginInputBindings.cs" Link="PluginInputBindings.cs" /></ItemGroup>
+</Project>

@@ -1,0 +1,786 @@
+{
+  "version": 3,
+  "source": "CODEBASE_STATE.md",
+  "rules": [
+    {
+      "id": "normal_direct",
+      "enabled": true,
+      "targetCategory": "正常位系",
+      "modeHint": "sonyu",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "正常位",
+        "開脚正常位",
+        "マングリ正常位",
+        "膝抱え正常位",
+        "大股開き正常位",
+        "腰抱え正常位"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "normal_combo_face_to_face",
+      "enabled": true,
+      "targetCategory": "正常位系",
+      "modeHint": "sonyu",
+      "priority": 132,
+      "requiredAll": [
+        "向かい合って"
+      ],
+      "requiredAny": [
+        "挿れ",
+        "突い",
+        "ピストン",
+        "奥まで"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "normal_combo_supine_leg_open",
+      "enabled": true,
+      "targetCategory": "正常位系",
+      "modeHint": "sonyu",
+      "priority": 130,
+      "requiredAll": [
+        "仰向け",
+        "脚"
+      ],
+      "requiredAny": [
+        "開",
+        "広げ"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない",
+        "やめる"
+      ]
+    },
+    {
+      "id": "normal_combo_supine_foot_open",
+      "enabled": true,
+      "targetCategory": "正常位系",
+      "modeHint": "sonyu",
+      "priority": 130,
+      "requiredAll": [
+        "仰向け",
+        "足"
+      ],
+      "requiredAny": [
+        "開",
+        "広げ"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない",
+        "やめる"
+      ]
+    },
+
+    {
+      "id": "back_direct",
+      "enabled": true,
+      "targetCategory": "後背位系",
+      "modeHint": "sonyu",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "後背位",
+        "バック",
+        "立ちバック",
+        "寝バック",
+        "伏せ後背位",
+        "フェンス後背位"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "back_combo_from_behind",
+      "enabled": true,
+      "targetCategory": "後背位系",
+      "modeHint": "sonyu",
+      "priority": 140,
+      "requiredAll": [
+        "後ろから"
+      ],
+      "requiredAny": [
+        "突い",
+        "挿れ",
+        "ピストン",
+        "腰振"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない",
+        "キスだけ",
+        "抱きしめるだけ"
+      ]
+    },
+    {
+      "id": "back_combo_back_facing",
+      "enabled": true,
+      "targetCategory": "後背位系",
+      "modeHint": "sonyu",
+      "priority": 136,
+      "requiredAll": [
+        "後ろ向き"
+      ],
+      "requiredAny": [
+        "突い",
+        "挿れ",
+        "腰振"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "cowgirl_direct",
+      "enabled": true,
+      "targetCategory": "騎乗位系",
+      "modeHint": "sonyu",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "騎乗位",
+        "ソファ騎乗位",
+        "手つなぎ騎乗位",
+        "乳首責め騎乗位",
+        "杭打ち"
+      ],
+      "excludeAny": [
+        "背面騎乗",
+        "逆騎乗"
+      ]
+    },
+    {
+      "id": "cowgirl_combo_ride_move",
+      "enabled": true,
+      "targetCategory": "騎乗位系",
+      "modeHint": "sonyu",
+      "priority": 128,
+      "requiredAll": [
+        "上に",
+        "乗"
+      ],
+      "requiredAny": [
+        "腰振",
+        "上下",
+        "動"
+      ],
+      "excludeAny": [
+        "後ろ向き",
+        "逆騎乗",
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "cowgirl_combo_straddle_move",
+      "enabled": true,
+      "targetCategory": "騎乗位系",
+      "modeHint": "sonyu",
+      "priority": 127,
+      "requiredAll": [
+        "跨"
+      ],
+      "requiredAny": [
+        "腰振",
+        "上下",
+        "動"
+      ],
+      "excludeAny": [
+        "後ろ向き",
+        "逆騎乗",
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "reverse_cowgirl_direct",
+      "enabled": true,
+      "targetCategory": "背面騎乗位系",
+      "modeHint": "sonyu",
+      "priority": 145,
+      "requiredAll": [],
+      "requiredAny": [
+        "背面騎乗位",
+        "背面騎乗",
+        "逆騎乗位",
+        "逆騎乗",
+        "reverse cowgirl"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "reverse_cowgirl_combo_back_straddle",
+      "enabled": true,
+      "targetCategory": "背面騎乗位系",
+      "modeHint": "sonyu",
+      "priority": 144,
+      "requiredAll": [
+        "後ろ",
+        "跨"
+      ],
+      "requiredAny": [
+        "腰振",
+        "上下",
+        "動",
+        "乗"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "reverse_cowgirl_combo_back_word",
+      "enabled": true,
+      "targetCategory": "背面騎乗位系",
+      "modeHint": "sonyu",
+      "priority": 143,
+      "requiredAll": [
+        "背中"
+      ],
+      "requiredAny": [
+        "乗",
+        "跨",
+        "腰振"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "sitting_direct",
+      "enabled": true,
+      "targetCategory": "座位系",
+      "modeHint": "sonyu",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "座位",
+        "対面座位",
+        "背面座位",
+        "椅子対面",
+        "椅子背面",
+        "床対面座位",
+        "床背面座位",
+        "正座背面座位",
+        "膝立て背面座位"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "sitting_combo_chair",
+      "enabled": true,
+      "targetCategory": "座位系",
+      "modeHint": "sonyu",
+      "priority": 126,
+      "requiredAll": [
+        "椅子",
+        "座"
+      ],
+      "requiredAny": [
+        "挿れ",
+        "突い",
+        "腰振",
+        "密着"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "sitting_combo_floor",
+      "enabled": true,
+      "targetCategory": "座位系",
+      "modeHint": "sonyu",
+      "priority": 125,
+      "requiredAll": [
+        "床",
+        "座"
+      ],
+      "requiredAny": [
+        "挿れ",
+        "突い",
+        "腰振",
+        "密着"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "sitting_combo_back_priority",
+      "enabled": true,
+      "targetCategory": "後背位系",
+      "modeHint": "sonyu",
+      "priority": 134,
+      "requiredAll": [
+        "後ろから"
+      ],
+      "requiredAny": [
+        "椅子",
+        "床",
+        "座"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "side_direct",
+      "enabled": true,
+      "targetCategory": "測位系",
+      "modeHint": "sonyu",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "側位",
+        "測位"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "side_combo_lie_side",
+      "enabled": true,
+      "targetCategory": "測位系",
+      "modeHint": "sonyu",
+      "priority": 124,
+      "requiredAll": [
+        "横向き"
+      ],
+      "requiredAny": [
+        "挿れ",
+        "突い",
+        "密着",
+        "ゆっくり"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "side_combo_lie_still",
+      "enabled": true,
+      "targetCategory": "測位系",
+      "modeHint": "sonyu",
+      "priority": 123,
+      "requiredAll": [
+        "寝たまま"
+      ],
+      "requiredAny": [
+        "挿れ",
+        "突い",
+        "密着"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "standing_direct",
+      "enabled": true,
+      "targetCategory": "立位系",
+      "modeHint": "sonyu",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "立位",
+        "駅弁",
+        "壁バック",
+        "壁対面",
+        "卓球台立位"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "standing_combo_stand_action",
+      "enabled": true,
+      "targetCategory": "立位系",
+      "modeHint": "sonyu",
+      "priority": 126,
+      "requiredAll": [
+        "立っ"
+      ],
+      "requiredAny": [
+        "挿れ",
+        "突い",
+        "抱き上げ",
+        "駅弁",
+        "壁"
+      ],
+      "excludeAny": [
+        "座っ",
+        "寝",
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "standing_combo_wall_action",
+      "enabled": true,
+      "targetCategory": "立位系",
+      "modeHint": "sonyu",
+      "priority": 125,
+      "requiredAll": [
+        "壁"
+      ],
+      "requiredAny": [
+        "立っ",
+        "挿れ",
+        "突い",
+        "駅弁"
+      ],
+      "excludeAny": [
+        "座っ",
+        "寝",
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "fellatio_direct",
+      "enabled": true,
+      "targetCategory": "フェラ系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "フェラ",
+        "フェラチオ",
+        "口でして",
+        "咥えて",
+        "喉奥"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "fellatio_combo_lick_mouth",
+      "enabled": true,
+      "targetCategory": "フェラ系",
+      "modeHint": "houshi",
+      "priority": 150,
+      "requiredAll": [
+        "舐め"
+      ],
+      "requiredAny": [
+        "咥",
+        "口で"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "fellatio_combo_mouth_suck",
+      "enabled": true,
+      "targetCategory": "フェラ系",
+      "modeHint": "houshi",
+      "priority": 149,
+      "requiredAll": [
+        "口"
+      ],
+      "requiredAny": [
+        "しゃぶ",
+        "咥",
+        "吸"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "handjob_direct",
+      "enabled": true,
+      "targetCategory": "手コキ系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "手コキ",
+        "手でしごく",
+        "手で抜く",
+        "握って"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "handjob_combo",
+      "enabled": true,
+      "targetCategory": "手コキ系",
+      "modeHint": "houshi",
+      "priority": 128,
+      "requiredAll": [
+        "手"
+      ],
+      "requiredAny": [
+        "しご",
+        "握",
+        "擦",
+        "抜"
+      ],
+      "excludeAny": [
+        "足",
+        "胸",
+        "口",
+        "舌",
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "paizuri_direct",
+      "enabled": true,
+      "targetCategory": "パイズリ系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "パイズリ",
+        "おっぱいで挟む"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "paizuri_combo",
+      "enabled": true,
+      "targetCategory": "パイズリ系",
+      "modeHint": "houshi",
+      "priority": 127,
+      "requiredAll": [
+        "胸"
+      ],
+      "requiredAny": [
+        "挟",
+        "擦"
+      ],
+      "excludeAny": [
+        "手",
+        "足",
+        "口",
+        "舌",
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "cunni_direct",
+      "enabled": true,
+      "targetCategory": "クンニ系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "クンニ"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "cunni_combo",
+      "enabled": true,
+      "targetCategory": "クンニ系",
+      "modeHint": "houshi",
+      "priority": 126,
+      "requiredAll": [
+        "舌"
+      ],
+      "requiredAny": [
+        "舐め",
+        "蜜壺",
+        "クリ"
+      ],
+      "excludeAny": [
+        "フェラ",
+        "口でして",
+        "咥",
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "sixtynine_direct",
+      "enabled": true,
+      "targetCategory": "69系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "69",
+        "シックスナイン"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "sixtynine_combo",
+      "enabled": true,
+      "targetCategory": "69系",
+      "modeHint": "houshi",
+      "priority": 124,
+      "requiredAll": [
+        "お互い"
+      ],
+      "requiredAny": [
+        "舐め",
+        "同時",
+        "交互"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "footjob_direct",
+      "enabled": true,
+      "targetCategory": "足コキ系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "足コキ"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "footjob_combo",
+      "enabled": true,
+      "targetCategory": "足コキ系",
+      "modeHint": "houshi",
+      "priority": 126,
+      "requiredAll": [
+        "足"
+      ],
+      "requiredAny": [
+        "挟",
+        "擦",
+        "しご"
+      ],
+      "excludeAny": [
+        "手",
+        "口",
+        "舌",
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "facesit_direct",
+      "enabled": true,
+      "targetCategory": "顔面騎乗系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "顔面騎乗",
+        "face sit"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "facesit_combo",
+      "enabled": true,
+      "targetCategory": "顔面騎乗系",
+      "modeHint": "houshi",
+      "priority": 126,
+      "requiredAll": [
+        "顔",
+        "乗"
+      ],
+      "requiredAny": [
+        "座",
+        "跨"
+      ],
+      "excludeAny": [
+        "しない",
+        "じゃない"
+      ]
+    },
+
+    {
+      "id": "kiss_petting_direct",
+      "enabled": true,
+      "targetCategory": "キス・愛撫系",
+      "modeHint": "houshi",
+      "priority": 100,
+      "requiredAll": [],
+      "requiredAny": [
+        "キス",
+        "愛撫",
+        "いちゃいちゃ",
+        "乳首責め",
+        "焦らす"
+      ],
+      "excludeAny": []
+    },
+    {
+      "id": "kiss_petting_combo_kiss_gentle",
+      "enabled": true,
+      "targetCategory": "キス・愛撫系",
+      "modeHint": "houshi",
+      "priority": 124,
+      "requiredAll": [
+        "キス"
+      ],
+      "requiredAny": [
+        "優しく",
+        "ゆっくり",
+        "撫で",
+        "甘え"
+      ],
+      "excludeAny": [
+        "突い",
+        "挿れ",
+        "しない",
+        "じゃない"
+      ]
+    },
+    {
+      "id": "kiss_petting_combo_petting_gentle",
+      "enabled": true,
+      "targetCategory": "キス・愛撫系",
+      "modeHint": "houshi",
+      "priority": 123,
+      "requiredAll": [
+        "愛撫"
+      ],
+      "requiredAny": [
+        "優しく",
+        "ゆっくり",
+        "撫で",
+        "焦ら"
+      ],
+      "excludeAny": [
+        "突い",
+        "挿れ",
+        "しない",
+        "じゃない"
+      ]
+    }
+  ]
+}

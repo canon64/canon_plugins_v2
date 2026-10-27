@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\MovementLineState.cs" Link="MovementLineState.cs" />
+    <Compile Include="..\SimpleFileLogger.cs" Link="SimpleFileLogger.cs" />
+    <Compile Include="..\DeferredTargetQueue.cs" Link="DeferredTargetQueue.cs" />
+    <Compile Include="..\PenetrationFollowContext.cs" Link="PenetrationFollowContext.cs" />
+    <Reference Include="0Harmony">
+      <HintPath>$(KKSDir)\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>$(KKSDir)\BepInEx\core\Mono.Cecil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

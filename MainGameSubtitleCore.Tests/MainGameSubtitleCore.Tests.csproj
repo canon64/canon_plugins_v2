@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\MainGameSubtitleCore\Plugin.DirectChange.cs" Link="Plugin.DirectChange.cs" />
+    <Compile Include="..\MainGameSubtitleCore\Plugin.DirectChangeState.cs" Link="Plugin.DirectChangeState.cs" />
+    <Compile Include="..\MainGameSubtitleCore\Plugin.DirectChangeRulesSync.cs" Link="Plugin.DirectChangeRulesSync.cs" />
+    <Compile Include="..\MainGameSubtitleCore\PluginSettings.cs" Link="PluginSettings.cs" />
+    <Reference Include="BepInEx"><HintPath>F:\kks\BepInEx\core\BepInEx.dll</HintPath></Reference>
+    <Reference Include="UnityEngine"><HintPath>F:\kks\KoikatsuSunshine_Data\Managed\UnityEngine.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>F:\kks\KoikatsuSunshine_Data\Managed\UnityEngine.CoreModule.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

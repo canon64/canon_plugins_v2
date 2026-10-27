@@ -1,0 +1,37 @@
+﻿{
+  "ResetOnLoop": true,
+  "Cues": [
+    {
+      "TimeSec": 0.0,
+      "Enabled": true,
+      "TriggerOnce": false,
+      "GaugeSpeed13": 1.0,
+      "GaugeTransitionSec": 0.0,
+      "GaugeEasing": "linear"
+    },
+    {
+      "TimeSec": 2.0,
+      "Enabled": true,
+      "TriggerOnce": false,
+      "GaugeSpeed13": 3.0,
+      "GaugeTransitionSec": 3.0,
+      "GaugeEasing": "linear"
+    },
+    {
+      "TimeSec": 8.0,
+      "Enabled": true,
+      "TriggerOnce": false,
+      "GaugeSpeed13": 1.0,
+      "GaugeTransitionSec": 3.0,
+      "GaugeEasing": "linear"
+    },
+    {
+      "TimeSec": 14.0,
+      "Enabled": true,
+      "TriggerOnce": false,
+      "GaugeSpeed13": 3.0,
+      "GaugeTransitionSec": 3.0,
+      "GaugeEasing": "easeInOutQuad"
+    }
+  ]
+}

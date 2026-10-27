@@ -1,0 +1,103 @@
+{
+  // コメント付きテンプレート（JSONC）
+  // これは説明用。プラグインは .jsonc を読み込まない。
+  // 実際に使うときはコメントを消して .json にするか、必要キーだけ本番jsonへコピペする。
+
+  // true: 動画ループ時にcue発火状態をリセット
+  "ResetOnLoop": true,
+
+  "Cues": [
+    {
+      // 発火時刻（秒）
+      "TimeSec": 15,
+
+      // trueで有効
+      "Enabled": true,
+
+      // trueだとこのcueは1回だけ発火
+      "TriggerOnce": false,
+
+      // 速度プリセット名（保存済みPresetを呼ぶ）
+      // 使わないならキーごと消す
+      "PresetName": "正常位 286-71.5",
+
+      // 速度値 1.0～3.0（こちらを編集用の正規キーとして使う）
+      "GaugeSpeed13": 3.0,
+
+      // 互換キー: ゲージ位置 0.0～1.0
+      // 基本は自動計算されるので手編集不要
+      "GaugePos01": 1.0,
+
+      // ---- FaceDB（表情） ----
+      // trueでFaceDB検索を実行
+      "FaceDbEnabled": true,
+
+      // true: 候補からランダム / false: 先頭候補
+      "FaceDbRandom": true,
+
+      // DBパス（空なら既定DB）
+      // 既定: F:/kks/work/FaceExpression/hface_extract/hface_dict.db
+      "FaceDbPath": "",
+
+      // file_id/face_idで固定したい場合のみ使う（通常は0のまま）
+      "FaceDbFileId": 0,
+      "FaceDbFaceId": 0,
+
+      // キャラキー（例: c43）
+      "FaceDbChara": "c43",
+
+      // 重要: 表情辞書の voice_kind
+      // 例: HFaceList_c43_02_00 の「02」→ FaceDbVoiceKind: 2
+      "FaceDbVoiceKind": 2,
+
+      // 重要: 表情辞書の action
+      // 例: HFaceList_c43_02_00 の末尾「00」→ FaceDbAction: 0
+      "FaceDbAction": 0,
+
+      // hface_nameの部分一致フィルタ（任意）
+      "FaceDbNameContains": "",
+
+      // 対象女性インデックス（0=1人目、1=2人目）
+      "TargetFemaleIndex": 0,
+
+      // ---- 体位 ----
+      // IDで指定したいときのみ使用（不要なら消す）
+      "TaiiId": 0,
+
+      // 名前で指定したいときに使用（例: 正常位）
+      "TaiiName": "正常位",
+
+      // HFlag.EMode（例: 3=sonyu）
+      // 体位誤ヒット防止。不要なら消す
+      "TaiiMode": 3,
+
+      // ---- コーデ切替 ----
+      // 0:Plain 1:Swim 2:Pajamas 3:Bathing
+      // 使わないcueではキーごと消す
+      "CoordinateType": 0,
+
+      // ---- 部位着脱 ----
+      // 使わないcueでは ClothesStates キーごと消す
+      "ClothesStates": [
+        {
+          // Kind（部位）
+          // 0上着 1ボトム 2ブラ 3パンティ 4手袋 5パンスト 6靴下 7靴(内) 8靴(外)
+          "Kind": 0,
+
+          // State（状態）
+          // 0着衣 1半脱 2半脱2(衣装依存) 3脱衣
+          "State": 3
+        },
+        {
+          "Kind": 1,
+          "State": 3
+        }
+      ],
+
+      // ---- クリック命令 ----
+      // 例: motionchange = 強弱切替
+      // これは「文字列命令名」。ClothesStates[].Kind とは別物
+      "ClickKind": "motionchange"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+KNOWN_ISSUES.md
+_default_values_review.json
+PLAN.md
+CODEBASE_STATE.md
+IMPL_PLAN.md
+
+# runtime-generated settings / logs
+FullIkGizmoSettings.json
+FullIkGizmoSettings.json.bak_*
+MainGirlHipHijack.log
+MainGirlHipHijack.MaleHmdDiag.log
+
+# runtime-generated pose assets
+pose_presets/
+male_pose_presets/
+
+# build artifacts
+bin/
+obj/

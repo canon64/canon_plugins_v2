@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>StudioCharaStateLogger</AssemblyName>
+    <RootNamespace>StudioCharaStateLogger</RootNamespace>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+    <BepInExDir Condition="'$(BepInExDir)'==''">$(KKSDir)\BepInEx</BepInExDir>
+    <ManagedDir Condition="'$(ManagedDir)'==''">$(KKSDir)\CharaStudio_Data\Managed</ManagedDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExDir)\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(ManagedDir)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(ManagedDir)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(ManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup><Compile Include="..\_shared\PluginInputBindings.cs" Link="PluginInputBindings.cs" /></ItemGroup>
+  <ItemGroup>
+    <Reference Include="MainGameUiInputCapture" Private="false">
+      <HintPath>..\MainGameUiInputCapture\bin\Release\net472\MainGameUiInputCapture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

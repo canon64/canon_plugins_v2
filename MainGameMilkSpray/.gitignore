@@ -1,0 +1,10 @@
+!BuildShader.ps1
+!analyze_performance.py
+!Resources/milkliquid.bundle
+!ShaderBuild/Assets/MilkLiquid.shader
+!ShaderBuild/ProjectSettings/ProjectVersion.txt
+!ShaderBuild/Packages/manifest.json
+ShaderBuild/Library/
+ShaderBuild/Temp/
+ShaderBuild/Logs/
+ShaderBuild/obj/

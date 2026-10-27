@@ -1,0 +1,310 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MainGameSpeedLimitBreak - SpeedTimeline 完全編集ガイド</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #111827;
+      --panel: #161b22;
+      --panel2: #1f2937;
+      --line: #2e3a4e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --good: #34d399;
+      --warn: #fbbf24;
+      --bad: #fb7185;
+      --accent: #60a5fa;
+      --code: #0b1220;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      font-family: "Yu Gothic UI", "Meiryo", sans-serif;
+      line-height: 1.65;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1,h2,h3 { margin: 0 0 10px; line-height: 1.3; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 23px; margin-top: 30px; }
+    h3 { font-size: 18px; margin-top: 18px; }
+    p { margin: 8px 0; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    .sub {
+      background: #111826;
+      border: 1px solid #25324a;
+      border-radius: 10px;
+      padding: 12px;
+      margin: 10px 0;
+    }
+    .muted { color: var(--muted); }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    .chip {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      background: #101726;
+    }
+    ul { margin: 8px 0 8px 20px; }
+    li { margin: 4px 0; }
+    code, pre {
+      font-family: Consolas, "Cascadia Code", monospace;
+      background: var(--code);
+      color: #dbeafe;
+    }
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    pre {
+      margin: 8px 0;
+      padding: 12px;
+      border: 1px solid #29364b;
+      border-radius: 10px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: var(--panel2); }
+    .route {
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #132033;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SpeedTimeline 完全編集ガイド</h1>
+    <p class="muted">MainGameSpeedLimitBreak / 「どのキーを残して、どれを消すか」を迷わないための版</p>
+
+    <div class="panel">
+      <h2>0. 先に結論（ここだけ読めば最低OK）</h2>
+      <ul>
+        <li>1cueに <span class="good">必要な機能のキーだけ</span>書く。</li>
+        <li><span class="bad">使わないキーは消す</span>。特に <code>TaiiId/TaiiMode/CoordinateType</code> を残しっぱなしにしない。</li>
+        <li><code>"CoordinateType": ""</code> みたいな型違いはNG。</li>
+        <li>編集反映は <code>Ctrl+R</code> か再起動。</li>
+      </ul>
+      <div class="route">
+        読み込むファイルは
+        <code>F:/kks/BepInEx/config/com.kks.maingame.speedlimitbreak.cfg</code>
+        の <code>[Video Timeline] 01 Cue File Path</code> で決まる。
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>1. どのファイルを編集するか</h2>
+      <div class="sub">
+        <p><span class="chip">実際に使われるJSON</span> <code>01 Cue File Path</code> が指しているファイル</p>
+        <p><span class="chip">いまの例</span> <code>speedTimeline.json</code> を指しているなら、
+        <code>F:/kks/BepInEx/plugins/MainGameSpeedLimitBreak/speedTimeline.json</code></p>
+      </div>
+      <p class="warn">同フォルダ内に似た名前のファイルが複数あっても、読まれるのは1本だけ。</p>
+    </div>
+
+    <div class="panel">
+      <h2>2. cueの最小構造</h2>
+      <pre>{
+  "TimeSec": 35,
+  "Enabled": true,
+  "(必要なキーだけここに追加)": "..."
+}</pre>
+      <p class="muted">TimeSecだけでは無効。機能キー（Preset/Face/Taii/Coordinate/Clothes/Click）のどれかが必要。</p>
+    </div>
+
+    <div class="panel">
+      <h2>3. 用途別テンプレ（コピペ用）</h2>
+
+      <h3>3-1. 速度プリセットだけ</h3>
+      <pre>{ "TimeSec": 10, "PresetName": "正常位 286-71.5" }</pre>
+
+      <h3>3-2. 強弱切替だけ（motionchange）</h3>
+      <pre>{ "TimeSec": 15, "ClickKind": "motionchange" }</pre>
+      <div class="sub">
+        <p><span class="chip">意味</span>動画時刻が15秒を跨いだ瞬間に、1フレームだけ <code>motionchange</code> クリック命令を送る。</p>
+        <p><span class="chip">効果</span>本編UIの「強弱切替」を押したのと同じ扱い。</p>
+        <p><span class="chip">重要</span><code>ClickKind</code> は文字列の命令名。衣装部位の <code>Kind</code> とは別物。</p>
+      </div>
+
+      <h3>3-3. 体位だけ</h3>
+      <pre>{
+  "TimeSec": 20,
+  "TaiiName": "正常位",
+  "TaiiMode": 3
+}</pre>
+
+      <h3>3-4. コーデだけ</h3>
+      <pre>{ "TimeSec": 25, "CoordinateType": 1 }</pre>
+
+      <h3>3-5. 部位着脱だけ</h3>
+      <pre>{
+  "TimeSec": 30,
+  "ClothesStates": [
+    { "Kind": 0, "State": 1 },
+    { "Kind": 1, "State": 3 }
+  ]
+}</pre>
+      <div class="sub">
+        <p><span class="chip">意味</span><code>ClothesStates</code> は配列で、1行が「部位1つの着脱命令」。</p>
+        <p><span class="chip">例</span><code>{ "Kind": 0, "State": 3 }</code> は「上着を脱衣状態にする」。</p>
+        <p><span class="chip">注意</span>衣装変更したくないcueでは <code>ClothesStates</code> キー自体を消す。</p>
+      </div>
+
+      <h3>3-6. 表情だけ（FaceDB）</h3>
+      <pre>{
+  "TimeSec": 35,
+  "FaceDbEnabled": true,
+  "FaceDbChara": "c13",
+  "FaceDbVoiceKind": 1,
+  "FaceDbAction": 0,
+  "FaceDbRandom": true
+}</pre>
+
+      <h3>3-7. 「Kind」は3種類ある（混同しない）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>キー名</th><th>値の型</th><th>意味</th><th>例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ClickKind</code></td>
+            <td>string</td>
+            <td>Hシーンへ送るクリック命令名</td>
+            <td><code>"motionchange"</code></td>
+          </tr>
+          <tr>
+            <td><code>ClothesStates[].Kind</code></td>
+            <td>int</td>
+            <td>衣装部位番号</td>
+            <td><code>0</code>=上着, <code>1</code>=ボトム</td>
+          </tr>
+          <tr>
+            <td><code>FaceDbVoiceKind</code></td>
+            <td>int</td>
+            <td>表情DBの <code>voice_kind</code> 条件</td>
+            <td><code>0/1/2</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h2>4. キー辞書（編集時の基準）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>キー</th><th>型</th><th>意味</th><th>使う時</th><th>使わない時</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>TimeSec</code></td><td>number</td><td>発火秒</td><td>必須</td><td>なし</td></tr>
+          <tr><td><code>Enabled</code></td><td>bool</td><td>有効/無効</td><td>通常true</td><td>省略可</td></tr>
+          <tr><td><code>TriggerOnce</code></td><td>bool</td><td>一回のみ</td><td>必要時のみ</td><td>省略可</td></tr>
+          <tr><td><code>PresetName</code></td><td>string</td><td>保存プリセット適用</td><td>速度変更したい時</td><td>削除</td></tr>
+          <tr><td><code>GaugeSpeed13</code></td><td>1..3</td><td>速度値（編集用の正規キー）</td><td>速度を直接指定したい時</td><td>削除</td></tr>
+          <tr><td><code>GaugePos01</code></td><td>0..1</td><td>互換キー（旧形式）</td><td>旧JSONとの互換</td><td>削除</td></tr>
+          <tr><td><code>ClickKind</code></td><td>string</td><td>クリック命令</td><td><code>motionchange</code> 等</td><td>削除</td></tr>
+          <tr><td><code>TaiiName</code></td><td>string</td><td>体位名検索</td><td>体位切替</td><td>削除</td></tr>
+          <tr><td><code>TaiiId</code></td><td>int</td><td>体位ID指定</td><td>ID固定時</td><td>削除</td></tr>
+          <tr><td><code>TaiiMode</code></td><td>int</td><td>モード絞り</td><td>体位誤ヒット防止</td><td>削除</td></tr>
+          <tr><td><code>CoordinateType</code></td><td>0..3</td><td>コーデ切替</td><td>コーデ切替時</td><td>削除</td></tr>
+          <tr><td><code>ClothesStates</code></td><td>array</td><td>部位着脱</td><td>脱衣制御時</td><td>削除</td></tr>
+          <tr><td><code>FaceDbEnabled</code></td><td>bool</td><td>FaceDB有効化</td><td>表情適用時</td><td>削除</td></tr>
+          <tr><td><code>FaceDbChara</code></td><td>string</td><td>キャラキー(c13等)</td><td>表情絞り込み</td><td>削除</td></tr>
+          <tr><td><code>FaceDbVoiceKind</code></td><td>int</td><td>voice_kind</td><td>表情絞り込み</td><td>削除</td></tr>
+          <tr><td><code>FaceDbAction</code></td><td>int</td><td>action</td><td>表情絞り込み</td><td>削除</td></tr>
+          <tr><td><code>FaceDbRandom</code></td><td>bool</td><td>ランダム選択</td><td>true/false選択</td><td>省略可</td></tr>
+          <tr><td><code>FaceDbNameContains</code></td><td>string</td><td>名前部分一致</td><td>呼吸/喘ぎ等で絞る</td><td>削除</td></tr>
+          <tr><td><code>FaceDbFileId</code>/<code>FaceDbFaceId</code></td><td>int</td><td>固定指定</td><td>完全固定したい時</td><td>削除</td></tr>
+          <tr><td><code>TargetFemaleIndex</code></td><td>int</td><td>対象女</td><td>2人目に当てる時</td><td>省略可(0)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h2>5. あなたのブロック（TimeSec=105）を正しく削る</h2>
+      <p><span class="bad">悪い例</span>: 使わないキーが大量に残っていて、体位/コーデ/Faceの誤発火原因になる。</p>
+      <p><span class="good">良い例（体位だけ）</span>:</p>
+      <pre>{
+  "TimeSec": 105,
+  "Enabled": true,
+  "TaiiName": "正常位",
+  "TaiiMode": 3
+}</pre>
+      <p><span class="good">良い例（体位+速度）</span>:</p>
+      <pre>{
+  "TimeSec": 105,
+  "PresetName": "正常位 286-71.5",
+  "TaiiName": "正常位",
+  "TaiiMode": 3
+}</pre>
+    </div>
+
+    <div class="panel">
+      <h2>6. FaceDBの場所（体位DBも同じ）</h2>
+      <ul>
+        <li>DB: <code>F:/kks/work/FaceExpression/hface_extract/hface_dict.db</code></li>
+        <li>表情: <code>face_dict</code>（VIEW） / <code>hface_files</code>, <code>faces</code></li>
+        <li>体位: <code>h_anim_poses</code></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>7. ログ診断（困ったらここ）</h2>
+      <ul>
+        <li><code>[video-cue] triggered ... actionsApplied=yes</code> なら何かは実行済み。</li>
+        <li><code>taii skipped reason=taii-not-found ...</code> は体位条件が合ってない。</li>
+        <li><code>coordinate applied ... type=0</code> が毎回出るなら不要な <code>CoordinateType</code> が残ってる。</li>
+        <li><code>face skipped reason=face-db-no-match</code> は FaceDB条件が厳しすぎる。</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>8. 編集チェックリスト</h2>
+      <ul>
+        <li>このcueで使う機能は何か？（速度/強弱/体位/コーデ/着脱/表情）</li>
+        <li>その機能キー以外を消したか？</li>
+        <li><code>01 Cue File Path</code> が編集ファイルを指しているか？</li>
+        <li>保存後に <code>Ctrl+R</code> したか？</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

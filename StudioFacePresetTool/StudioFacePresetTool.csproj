@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>StudioFacePresetTool</AssemblyName>
+    <RootNamespace>StudioFacePresetTool</RootNamespace>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+    <BepInExDir Condition="'$(BepInExDir)'==''">$(KKSDir)\BepInEx</BepInExDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(KKSDir)\CharaStudio_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(KKSDir)\CharaStudio_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(KKSDir)\CharaStudio_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(KKSDir)\CharaStudio_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(KKSDir)\CharaStudio_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(KKSDir)\CharaStudio_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MainGameLogRelay" Private="false">
+      <HintPath Condition="Exists('$(BepInExDir)\plugins\MainGameLogRelay\MainGameLogRelay.dll')">$(BepInExDir)\plugins\MainGameLogRelay\MainGameLogRelay.dll</HintPath>
+      <HintPath Condition="Exists('$(BepInExDir)\plugins\canon_plugins\MainGameLogRelay\MainGameLogRelay.dll')">$(BepInExDir)\plugins\canon_plugins\MainGameLogRelay\MainGameLogRelay.dll</HintPath>
+    </Reference>
+    <Reference Include="MainGameUiInputCapture" Private="false">
+      <HintPath>..\MainGameUiInputCapture\bin\Release\net472\MainGameUiInputCapture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup><Compile Include="..\_shared\PluginInputBindings.cs" Link="PluginInputBindings.cs" /></ItemGroup>
+</Project>

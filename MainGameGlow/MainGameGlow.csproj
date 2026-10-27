@@ -1,0 +1,100 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>MainGameGlow</AssemblyName>
+    <RootNamespace>MainGameGlow</RootNamespace>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+    <BepInExDir Condition="'$(BepInExDir)'==''">$(KKSDir)\BepInEx</BepInExDir>
+    <ManagedDir>$(KKSDir)\KoikatsuSunshine_Data\Managed</ManagedDir>
+    <!-- AGENTS.md の DLL deploy rule に従い canon_plugins 配下へ置く -->
+    <PluginOutDir>$(BepInExDir)\plugins\canon_plugins\MainGameGlow</PluginOutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 自作の部屋以外で発火させないための共通門番 -->
+    <Compile Include="..\_shared\BlankRoomGate.cs" Link="BlankRoomGate.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExDir)\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(ManagedDir)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine">
+      <HintPath>$(ManagedDir)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(ManagedDir)\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(ManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>$(ManagedDir)\UnityEngine.XRModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- VRの目判定に使う。SimpleAfterimage と同じ参照 -->
+    <Reference Include="VRGIN_OpenXR">
+      <HintPath>$(BepInExDir)\plugins\KKS_VR\VRGIN_OpenXR.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>$(ManagedDir)\UnityEngine.VRModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- 診断用のRT書き出し(EncodeToPNG)で使う -->
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(ManagedDir)\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>$(ManagedDir)\Unity.Postprocessing.Runtime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuildCopy" AfterTargets="Build" Condition="'$(DeployToGame)' == 'true'">
+    <MakeDir Directories="$(PluginOutDir)" />
+    <Copy
+      SourceFiles="$(TargetDir)$(AssemblyName).dll"
+      DestinationFolder="$(PluginOutDir)"
+      SkipUnchangedFiles="true" />
+    <Copy
+      Condition="Exists('$(TargetDir)$(AssemblyName).pdb')"
+      SourceFiles="$(TargetDir)$(AssemblyName).pdb"
+      DestinationFolder="$(PluginOutDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
+</Project>

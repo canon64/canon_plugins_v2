@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><EnableDefaultCompileItems>false</EnableDefaultCompileItems></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" /><Compile Include="Stubs.cs" />
+    <Compile Include="..\..\..\MainGameUiInputCapture\InputBindingsApi.cs" Link="InputBindingsApi.cs" />
+    <Compile Include="..\..\..\MainGameUiInputCapture\InputBindingCatalog.cs" Link="InputBindingCatalog.cs" />
+  </ItemGroup>
+</Project>

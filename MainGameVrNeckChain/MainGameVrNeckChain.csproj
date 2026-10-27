@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <KKSDir Condition="'$(KKSDir)'==''">F:\kks</KKSDir>
+    <ManagedDir>$(KKSDir)\KoikatsuSunshine_Data\Managed</ManagedDir>
+    <PluginsDir>$(KKSDir)\BepInEx\plugins</PluginsDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(KKSDir)\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(ManagedDir)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(ManagedDir)\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ManagedDir)\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(ManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(ManagedDir)\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="VRGIN_OpenXR"><HintPath>$(PluginsDir)\KKS_VR\VRGIN_OpenXR.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.XR.OpenVR"><HintPath>$(PluginsDir)\KKS_VR\Unity.XR.OpenVR.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MainGameUnifiedUi"><HintPath>$(PluginsDir)\canon_plugins\MainGameUnifiedUi\MainGameUnifiedUi.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MainGameTransformGizmo"><HintPath>$(PluginsDir)\canon_plugins\MainGameTransformGizmo\MainGameTransformGizmo.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup><Compile Include="..\_shared\PluginInputBindings.cs" Link="PluginInputBindings.cs" /></ItemGroup>
+  <ItemGroup>
+    <Reference Include="MainGameUiInputCapture" Private="false">
+      <HintPath>..\MainGameUiInputCapture\bin\Release\net472\MainGameUiInputCapture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

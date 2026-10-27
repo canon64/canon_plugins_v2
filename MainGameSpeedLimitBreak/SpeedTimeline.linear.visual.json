@@ -1,0 +1,167 @@
+﻿{
+    "ResetOnLoop":  true,
+    "Cues":  [
+                 {
+                     "TimeSec":  0,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1
+                 },
+                 {
+                     "TimeSec":  0.25,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.1667
+                 },
+                 {
+                     "TimeSec":  0.5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.3333
+                 },
+                 {
+                     "TimeSec":  0.75,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.5
+                 },
+                 {
+                     "TimeSec":  1,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.6667
+                 },
+                 {
+                     "TimeSec":  1.25,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.8333
+                 },
+                 {
+                     "TimeSec":  1.5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2
+                 },
+                 {
+                     "TimeSec":  1.75,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.1667
+                 },
+                 {
+                     "TimeSec":  2,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.3333
+                 },
+                 {
+                     "TimeSec":  2.25,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.5
+                 },
+                 {
+                     "TimeSec":  2.5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.6667
+                 },
+                 {
+                     "TimeSec":  2.75,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.8333
+                 },
+                 {
+                     "TimeSec":  3,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  3
+                 },
+                 {
+                     "TimeSec":  4,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  3
+                 },
+                 {
+                     "TimeSec":  5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  3
+                 },
+                 {
+                     "TimeSec":  5.25,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.8333
+                 },
+                 {
+                     "TimeSec":  5.5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.6667
+                 },
+                 {
+                     "TimeSec":  5.75,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.5
+                 },
+                 {
+                     "TimeSec":  6,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.3333
+                 },
+                 {
+                     "TimeSec":  6.25,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2.1667
+                 },
+                 {
+                     "TimeSec":  6.5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  2
+                 },
+                 {
+                     "TimeSec":  6.75,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.8333
+                 },
+                 {
+                     "TimeSec":  7,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.6667
+                 },
+                 {
+                     "TimeSec":  7.25,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.5
+                 },
+                 {
+                     "TimeSec":  7.5,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.3333
+                 },
+                 {
+                     "TimeSec":  7.75,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1.1667
+                 },
+                 {
+                     "TimeSec":  8,
+                     "Enabled":  true,
+                     "TriggerOnce":  false,
+                     "GaugeSpeed13":  1
+                 }
+             ]
+}

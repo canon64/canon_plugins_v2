@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net472</TargetFramework><LangVersion>latest</LangVersion></PropertyGroup>
+  <ItemGroup><Compile Include="..\SharedRhythmClock.cs" Link="SharedRhythmClock.cs" /></ItemGroup>
+</Project>
